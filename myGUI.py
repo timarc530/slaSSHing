@@ -74,10 +74,12 @@ class GUI(wx.Frame):
             password_string = chooser.password_string.GetValue()
             if name_string != '' and host_string != '':
                 self.ssh_string.SetLabelText(name_string + '@' + host_string)
-
-            key_path = chooser.key_label.GetLabelText()
-            print chooser.key_type + ' key selected'
-            print key_path
+            if chooser.rb_pw.GetValue():
+                print 'Password based login'
+            else:
+                key_path = chooser.key_label.GetLabelText()
+                print chooser.key_type + ' key selected'
+                print key_path
         chooser.Destroy()
 
     def OnQuit(self, event):
