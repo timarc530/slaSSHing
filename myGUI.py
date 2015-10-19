@@ -67,7 +67,7 @@ class GUI(wx.Frame):
 
     def OnNew(self, event):
         print 'new session'
-        chooser = NewSessionWindow.myPrompt(None, title='Choose Session Parameters')
+        chooser = NewSessionWindow.myPrompt(parent=self, title='Choose Session Parameters')
         if chooser.ShowModal() == wx.ID_OK:
             name_string = chooser.name_string.GetValue()
             host_string = chooser.host_string.GetValue()

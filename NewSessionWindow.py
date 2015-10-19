@@ -72,8 +72,8 @@ class myPrompt(wx.Dialog):
         panel.SetSizer(hbox)
 
         # lame hack for getting it to draw correctly
-        self.Maximize()
-        self.Restore()
+        self.SetSize((self.GetSize().width, self.GetSize().height+1))
+        self.SetSize((self.GetSize().width, self.GetSize().height-1))
 
     def OnKeyTypeSet(self, event):
         self.key_type = event.EventObject.GetLabelText()
